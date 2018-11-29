@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
-import com.ntl.topjobs.seekersignuplogin.service.ServiceClass;
+import com.ntl.topjobs.seekersignuplogin.service.SeekerService;
 
 /**
  * @author Training
@@ -19,7 +19,7 @@ import com.ntl.topjobs.seekersignuplogin.service.ServiceClass;
 @Entity
 public class SeekerSignup {
 	@Transient
-	ServiceClass serviceClass;
+	SeekerService serviceClass;
 	private String firstName;
 	private String lastName;
 	private String password;
@@ -27,7 +27,7 @@ public class SeekerSignup {
 	private LocalDate  dob;
 	@Transient
 	private String address;
-    private int mobileno;
+    private int  mobileno;
     @Column(name="gender")
 	private String Gender;
 	private String bio;
@@ -44,24 +44,24 @@ public class SeekerSignup {
 	 * 
 	 */
 	@Transient
-	ServiceClass service;
+	SeekerService service;
 
 	
 	public SeekerSignup() {
 		super();
-		service=new ServiceClass();	
+		service=new SeekerService();	
 	}
 		 
 	/**
 	 * @return the serviceClass
 	 */
-	public ServiceClass getServiceClass() {
+	public SeekerService getServiceClass() {
 		return serviceClass;
 	}
 	/**
 	 * @param serviceClass the serviceClass to set
 	 */
-	public void setServiceClass(ServiceClass serviceClass) {
+	public void setServiceClass(SeekerService serviceClass) {
 		this.serviceClass = serviceClass;
 	}
 	/**
@@ -139,13 +139,13 @@ public class SeekerSignup {
 	/**
 	 * @return the mobileno
 	 */
-	public int getMobileno() {
+	public long  getMobileno() {
 		return mobileno;
 	}
 	/**
 	 * @param mobileno the mobileno to set
 	 */
-	public void setMobileno(int mobileno) {
+	public void setMobileno(int  mobileno) {
 		this.mobileno = mobileno;
 	}
 	/**

@@ -13,32 +13,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ntl.topjobs.seekersignuplogin.bean.SeekerSignup;
-import com.ntl.topjobs.seekersignuplogin.service.ServiceClass;
+import com.ntl.topjobs.seekersignuplogin.service.SeekerService;
 
 /**
  * @author Training
  *
  */
-@CrossOrigin(origins="http://localhost:4200",maxAge=3600)
+@CrossOrigin(origins="http://localhost:4201",maxAge=3600)
 @RestController
-public class Controller {
+public class SeekerController {
 	@Autowired
-	ServiceClass serviceClass;
+	SeekerService serviceClass;
 	@Autowired 
 	
 	
 	//SignupBean beanSignup= new SignupBean();
 
-	public Controller() {
+	public SeekerController() {
 		super();		
 	}
 
-	public Controller(ServiceClass sc) {
+	public SeekerController(SeekerService sc) {
 		super();		
 		serviceClass=sc;
 	}
 	
-	@PostMapping("/seeker/signup/emp")
+	@PostMapping("/seeker/signup")
 	public SeekerSignup signup(@RequestBody SeekerSignup signupBean) {
 	System.out.println(signupBean.getCity());
 		return (serviceClass.addEmployee(signupBean));

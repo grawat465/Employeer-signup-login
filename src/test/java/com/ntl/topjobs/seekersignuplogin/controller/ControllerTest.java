@@ -17,16 +17,16 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.ntl.topjobs.seekersignuplogin.bean.SeekerLogin;
 import com.ntl.topjobs.seekersignuplogin.bean.SeekerSignup;
-import com.ntl.topjobs.seekersignuplogin.controller.Controller;
+import com.ntl.topjobs.seekersignuplogin.controller.SeekerController;
 import com.ntl.topjobs.seekersignuplogin.dao.LoginDao;
 import com.ntl.topjobs.seekersignuplogin.dao.SignUpDao;
-import com.ntl.topjobs.seekersignuplogin.service.ServiceClass;
+import com.ntl.topjobs.seekersignuplogin.service.SeekerService;
 
 
 @RunWith(MockitoJUnitRunner.class)
 public class ControllerTest {
 	@Mock
-	ServiceClass service;
+	SeekerService service;
 	
 	SeekerSignup seekerup;
 	
@@ -61,7 +61,7 @@ public class ControllerTest {
 		seeker.setUsername("VK123");
 		
 		Mockito.lenient().when(service.addEmployee(seeker)).thenReturn(seeker);
-		Controller c=new Controller(service);
+		SeekerController c=new SeekerController(service);
 		assertEquals(seeker,c.signup(seeker));
 	
 	}

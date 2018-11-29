@@ -18,7 +18,7 @@ import com.ntl.topjobs.seekersignuplogin.dao.LoginDao;
  *
  */
 @Service
-public class ServiceClass {
+public class SeekerService {
 	
 	@Autowired
 	SignUpDao dao;
@@ -28,11 +28,11 @@ public class ServiceClass {
 	SeekerLogin loginBean;
 	
 	
-public ServiceClass() {
+public SeekerService() {
 		super();
 		loginBean=new SeekerLogin();
 	}
-public ServiceClass(SignUpDao d, LoginDao logindb) {
+public SeekerService(SignUpDao d, LoginDao logindb) {
 	super();
 	loginBean=new SeekerLogin();
 	dao=d;

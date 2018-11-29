@@ -19,7 +19,7 @@ import com.ntl.topjobs.seekersignuplogin.bean.SeekerLogin;
 import com.ntl.topjobs.seekersignuplogin.bean.SeekerSignup;
 import com.ntl.topjobs.seekersignuplogin.dao.LoginDao;
 import com.ntl.topjobs.seekersignuplogin.dao.SignUpDao;
-import com.ntl.topjobs.seekersignuplogin.service.ServiceClass;
+import com.ntl.topjobs.seekersignuplogin.service.SeekerService;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -36,7 +36,7 @@ public class ServiceClassTest {
 	
 	@Test
 	public void testGenerateEmpId() {
-		ServiceClass service=new ServiceClass();
+		SeekerService service=new SeekerService();
 		assertNotNull(service.generateEmpId("Varun"));
 		//fail("Not yet implemented");
 	}
@@ -51,7 +51,7 @@ public class ServiceClassTest {
 		seeker.setFirstName("Varun");
 		Mockito.lenient().when(logindb.save(seek)).thenReturn(seek);
 		Mockito.lenient().when(signdb.save(seeker)).thenReturn(seeker);
-		ServiceClass sc=new ServiceClass(signdb,logindb);
+		SeekerService sc=new SeekerService(signdb,logindb);
 		assertEquals(seeker, sc.addEmployee(seeker));
 		
 		//fail("Not yet implemented");
@@ -68,7 +68,7 @@ public class ServiceClassTest {
 		seeker.setUsername("VK123");
 		
 		Mockito.lenient().when(logindb.findById("VK123")).thenReturn(null);
-		ServiceClass sc=new ServiceClass(signdb,logindb);
+		SeekerService sc=new SeekerService(signdb,logindb);
 		assertEquals(false,sc.getUser("Varun", "Kashyap"));
 		
 	}
