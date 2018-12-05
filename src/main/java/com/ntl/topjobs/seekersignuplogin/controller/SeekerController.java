@@ -1,6 +1,9 @@
-/**
+/**File name=SeekerLogin
+ * Author=Govind Singh
+ * Date=27/12/2018
  * 
  */
+
 package com.ntl.topjobs.seekersignuplogin.controller;
 
 
@@ -24,10 +27,10 @@ import com.ntl.topjobs.seekersignuplogin.service.SeekerService;
 public class SeekerController {
 	@Autowired
 	SeekerService serviceClass;
-	@Autowired 
 	
 	
-	//SignupBean beanSignup= new SignupBean();
+	
+
 
 	public SeekerController() {
 		super();		

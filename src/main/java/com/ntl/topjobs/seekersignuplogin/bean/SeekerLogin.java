@@ -1,4 +1,6 @@
-/**
+/**File name=SeekerLogin
+ * Author=Govind Singh
+ * Date=27/12/2018
  * 
  */
 package com.ntl.topjobs.seekersignuplogin.bean;
@@ -16,6 +18,7 @@ public class SeekerLogin {
 private String username;
 private String emailId;
 private String password;
+
 public SeekerLogin() {
 	super();
 	

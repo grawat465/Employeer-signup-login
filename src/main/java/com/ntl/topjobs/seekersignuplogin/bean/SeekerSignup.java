@@ -1,4 +1,6 @@
-/**
+/**File name=SeekerLogin
+ * Author=Govind Singh
+ * Date=27/12/2018
  * 
  */
 package com.ntl.topjobs.seekersignuplogin.bean;
@@ -18,8 +20,7 @@ import com.ntl.topjobs.seekersignuplogin.service.SeekerService;
  */
 @Entity
 public class SeekerSignup {
-	@Transient
-	SeekerService serviceClass;
+	
 	private String firstName;
 	private String lastName;
 	private String password;
@@ -40,30 +41,19 @@ public class SeekerSignup {
 	@Id
 	private String username;
 	private String resumeid;
+	@Transient
+	SeekerService serviceClass;
 	/**
 	 * 
 	 */
-	@Transient
-	SeekerService service;
+	
 
 	
 	public SeekerSignup() {
 		super();
-		service=new SeekerService();	
+			
 	}
 		 
-	/**
-	 * @return the serviceClass
-	 */
-	public SeekerService getServiceClass() {
-		return serviceClass;
-	}
-	/**
-	 * @param serviceClass the serviceClass to set
-	 */
-	public void setServiceClass(SeekerService serviceClass) {
-		this.serviceClass = serviceClass;
-	}
 	/**
 	 * @return the firstName
 	 */
@@ -241,8 +231,20 @@ public class SeekerSignup {
 	/**
 	 * @param resumeid the resumeid to set
 	 */
-	public void setResumeid() {
-		  resumeid=service.generateEmpId(firstName);
+	/**
+	 * @return the serviceClass
+	 */
+	public SeekerService getServiceClass() {
+		return serviceClass;
+	}
+	/**
+	 * @param serviceClass the serviceClass to set
+	 */
+	public void setServiceClass(SeekerService serviceClass) {
+		this.serviceClass = serviceClass;
+	}
+	public void setResumeid(String resumeid) {
+		  this.resumeid=resumeid;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

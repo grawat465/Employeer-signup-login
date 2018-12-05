@@ -35,9 +35,9 @@ public class ServiceClassTest {
 	SeekerLogin seek=new SeekerLogin();
 	
 	@Test
-	public void testGenerateEmpId() {
+	public void testGenerateResumeId() {
 		SeekerService service=new SeekerService();
-		assertNotNull(service.generateEmpId("Varun"));
+		assertNotNull(service.generateResumeId());
 		//fail("Not yet implemented");
 	}
 
@@ -54,7 +54,7 @@ public class ServiceClassTest {
 		SeekerService sc=new SeekerService(signdb,logindb);
 		assertEquals(seeker, sc.addEmployee(seeker));
 		
-		//fail("Not yet implemented");
+		
 	}
 
 	@Test

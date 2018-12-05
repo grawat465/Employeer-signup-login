@@ -1,4 +1,6 @@
-/**
+/**File name=SeekerLogin
+ * Author=Govind Singh
+ * Date=27/12/2018
  * 
  */
 package com.ntl.topjobs.seekersignuplogin.service;
@@ -38,11 +40,10 @@ public SeekerService(SignUpDao d, LoginDao logindb) {
 	dao=d;
 	loginDao=logindb;
 }
-public String generateEmpId(String firstName)
-{
-	 int x = (int)(Math.random()*((9999-1000)+1))+1000;
-	 String str=Integer.toString(x);
-	char a[]= {firstName.charAt(0),firstName.charAt(1),str.charAt(0),str.charAt(1),str.charAt(2),str.charAt(3)};
+public String generateResumeId() {
+	int x = (int) (Math.random() * ((9999 - 1000) + 1)) + 1000;
+	String str = Integer.toString(x);
+	char a[] = { str.charAt(0), str.charAt(1), str.charAt(2), str.charAt(3) };
 	return (new String(a));
 }
 
@@ -50,7 +51,8 @@ public SeekerSignup addEmployee(SeekerSignup signupBean) {
 	loginBean.setEmailId(signupBean.getEmailId());
 	loginBean.setusername(signupBean.getUsername());
 	loginBean.setPassword(signupBean.getPassword());
-	signupBean.setResumeid();
+	String resumeId=generateResumeId();
+	signupBean.setResumeid(resumeId);
 	loginDao.save(loginBean);
 	return dao.save(signupBean);  
 }
@@ -67,7 +69,7 @@ public boolean getUser(String username,String password) {
 	}
 	catch(Exception e)
 	{
-		System.out.println("fail");
+		System.out.println("failed");
 		return false;
 	}
 	
