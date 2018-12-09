@@ -4,6 +4,9 @@
  */
 package com.ntl.topjobs.seekersignuplogin;
 
+import java.util.logging.Logger;
+
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,11 +15,15 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
+
+
 @SpringBootApplication
 @EnableFeignClients("com.ntl.topjobs.seekersignuplogin")
 @EnableEurekaClient
 @EnableDiscoveryClient
 public class SeekerSignupLoginApplication {
+     
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(SeekerSignupLoginApplication.class, args);

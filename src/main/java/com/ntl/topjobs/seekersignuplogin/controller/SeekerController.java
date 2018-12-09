@@ -50,18 +50,13 @@ public class SeekerController {
 
 	@GetMapping("/seeker/login/emp/{id}/{password}")
 	public boolean login(@PathVariable("id") String id, @PathVariable("password") String password) {
-		System.out.println("i m darth vader");
+		
 		if (serviceClass.getUser(id, password) == true) {
 			return true;
 		} else
 			return false;
 	}
 	
-	@GetMapping("/testComm")
-	public String testComm() {
-		System.out.println("TEST SUCCESS");
-		return "SUCCESS";
-	}
-
+	
 }
 	

@@ -24,7 +24,7 @@ import com.ntl.topjobs.seekersignuplogin.service.SeekerService;
 
 
 @RunWith(MockitoJUnitRunner.class)
-public class ControllerTest {
+public class SeekerControllerTest {
 	@Mock
 	SeekerService service;
 	
@@ -50,7 +50,7 @@ public class ControllerTest {
 	}
 
 	@Test
-	public void testAddEmployee() {
+	public void testsignup() {
 		SeekerSignup seeker=new SeekerSignup();
 		seeker.setAddress("asd");
 		seeker.setBio("ASd");
